@@ -1,0 +1,4 @@
+total_params: 1000   # 1 k, 10 k, 100 k
+batch: 8
+lr: 5e-4
+steps: 2000
