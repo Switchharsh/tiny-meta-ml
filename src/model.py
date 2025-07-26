@@ -9,7 +9,7 @@ def make_model(total_params: int, vocab: int = 50257, seq: int = 256):
     """
     a, b = 12, 4 * vocab
     discriminant = b**2 + 4 * a * total_params
-    h = int((-b + discriminant**0.5) / (2 * a))
+    h = max(32, int((-b + discriminant**0.5) / (2 * a)))  # ≥ 32
     n_layer = max(1, h // 64)
     n_head  = max(1, h // 64)
     cfg = GPT2Config(
